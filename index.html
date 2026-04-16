@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Premium petsitting in Sector 4, Bucharest. Trusted, insured and local." />
+  <title>Follow My Leash — Premium Petsitting, Sector 4 Bucharest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream:   'rgb(249 247 242 / <alpha-value>)',
+            charcoal:'rgb(26 26 26 / <alpha-value>)',
+            forest:  'rgb(74 93 78 / <alpha-value>)',
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans:  ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --color-bg: #F9F7F2;
+      --color-text: #1A1A1A;
+      --color-accent: #4A5D4E;
+    }
+    html { scroll-behavior: smooth; }
+    body { background-color: var(--color-bg); color: var(--color-text); }
+
+    /* Scroll-reveal */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    [data-reveal].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* 4-step slider */
+    #slide-track {
+      display: flex;
+      width: 100%;
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .step-slide {
+      flex: 0 0 100%;
+      min-width: 0;
+    }
+
+    /* Progress bar transition */
+    #form-progress { transition: width 0.5s ease; }
+
+    /* Language-specific content panels (modals) */
+    .lang-ro { display: none; }
+
+    /* Legal modals */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(26,26,26,0.88);
+      z-index: 200;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 2rem 1rem 4rem;
+      overflow-y: auto;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+    .modal-overlay.is-open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .modal-box {
+      background: #F9F7F2;
+      color: #1A1A1A;
+      max-width: 680px;
+      width: 100%;
+      padding: 3rem 2.5rem 3.5rem;
+      position: relative;
+      margin: auto;
+    }
+    @media (max-width: 640px) {
+      .modal-box { padding: 2rem 1.5rem 2.5rem; }
+    }
+    .modal-box h2 { font-family: "Playfair Display", Georgia, serif; }
+    .modal-box h3 { font-family: "Playfair Display", Georgia, serif; margin-top: 2rem; margin-bottom: 0.5rem; font-size: 1.1rem; }
+    .modal-box p  { font-size: 0.875rem; line-height: 1.75; color: rgba(26,26,26,0.75); margin-bottom: 0.75rem; }
+    .modal-box ul { font-size: 0.875rem; line-height: 1.75; color: rgba(26,26,26,0.75); margin-bottom: 0.75rem; padding-left: 1.25rem; list-style: disc; }
+    .modal-box a  { color: #4A5D4E; text-decoration: underline; }
+    .modal-divider { border: none; border-top: 1px solid rgba(26,26,26,0.1); margin: 2rem 0; }
+    .modal-effective { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(26,26,26,0.35); margin-bottom: 2rem; }
+
+    /* Force generation of dynamic classes used by JS */
+    .safelist-anchor {
+      display: none !important;
+    }
+  </style>
+</head>
+<body class="bg-cream text-charcoal font-sans antialiased">
+
+  <!-- Tailwind safelist: dynamic classes added via JS -->
+  <div class="safelist-anchor ring-2 ring-forest border-forest bg-cream/90 backdrop-blur-md shadow-sm" aria-hidden="true"></div>
+
+  <!-- ══════════════════════ NAV ══════════════════════ -->
+  <nav id="main-nav" aria-label="Main navigation"
+       class="fixed top-0 left-0 right-0 z-50 px-6 py-5 flex items-center justify-between transition-all duration-300">
+    <a href="#" class="font-serif text-xl font-semibold tracking-wide" data-i18n="nav.brand">Follow My Leash</a>
+    <button id="lang-toggle" aria-label="Switch language"
+            class="text-xs font-semibold tracking-widest border border-charcoal/30 px-4 py-1.5 rounded-full
+                   hover:bg-forest hover:text-white hover:border-forest transition-colors duration-200">
+      RO
+    </button>
+  </nav>
+
+  <!-- ══════════════════════ HERO ══════════════════════ -->
+  <section aria-label="Hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center"
+         style="background-image: url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1920&q=80')">
+      <div class="absolute inset-0 bg-charcoal/55"></div>
+    </div>
+    <div class="relative z-10 text-center text-white px-6 max-w-3xl mx-auto">
+      <p class="text-xs font-semibold tracking-[0.3em] uppercase text-white/60 mb-6">Sector 4, Bucharest</p>
+      <h1 class="font-serif text-5xl md:text-7xl font-bold leading-tight mb-8" data-i18n="hero.headline">
+        Premium Pet Care, Personalised for Sector 4
+      </h1>
+      <p class="text-lg md:text-xl font-light mb-12 opacity-85 max-w-xl mx-auto leading-relaxed" data-i18n="hero.subhead">
+        Trusted, insured and dedicated sitters — right in your neighbourhood.
+      </p>
+      <button id="hero-cta"
+              class="inline-block bg-forest text-white px-10 py-4 text-xs font-semibold uppercase tracking-[0.2em]
+                     hover:bg-forest/80 transition-colors duration-200"
+              data-i18n="hero.cta">
+        Get Your Free Quote
+      </button>
+    </div>
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40">
+      <span class="text-xs tracking-widest uppercase">Scroll</span>
+      <svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="14" height="22" rx="7" stroke="currentColor" stroke-width="1.5"/>
+        <rect x="7" y="5" width="2" height="5" rx="1" fill="currentColor"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ══════════════════════ ABOUT / TRUST STRIP ══════════════════════ -->
+  <section aria-label="About" class="py-24 px-6" data-reveal>
+    <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 text-center justify-items-center">
+
+      <div class="flex flex-col items-center gap-5">
+        <div class="w-14 h-14 flex items-center justify-center rounded-full bg-forest/10 text-forest">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+            <circle cx="12" cy="9" r="2.5"/>
+          </svg>
+        </div>
+        <h3 class="font-serif text-xl font-semibold" data-i18n="about.sector4">Sector 4 Specialist</h3>
+        <p class="text-sm text-charcoal/60 leading-relaxed" data-i18n="about.sector4.desc">We know every park, vet and shortcut in your neighbourhood.</p>
+      </div>
+
+      <div class="flex flex-col items-center gap-5">
+        <div class="w-14 h-14 flex items-center justify-center rounded-full bg-forest/10 text-forest">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+          </svg>
+        </div>
+        <h3 class="font-serif text-xl font-semibold" data-i18n="about.rated">5★ Rated</h3>
+        <p class="text-sm text-charcoal/60 leading-relaxed" data-i18n="about.rated.desc">Dozens of happy pet parents across Sector 4.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════ SERVICES ══════════════════════ -->
+  <section aria-label="Services" class="py-24 px-6 bg-charcoal text-white" data-reveal>
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-4xl md:text-5xl text-center mb-16" data-i18n="services.title">Our Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <article class="border border-white/10 p-10 flex flex-col gap-6 hover:border-forest transition-colors duration-300">
+          <div class="text-forest">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+              <polyline points="9,22 9,12 15,12 15,22"/>
+            </svg>
+          </div>
+          <h3 class="font-serif text-2xl" data-i18n="services.inhome.title">In-Home Sitting</h3>
+          <p class="text-white/60 text-sm leading-relaxed flex-1" data-i18n="services.inhome.desc">We come to you so your pet stays comfortable in their own space.</p>
+          <span class="text-xs tracking-widest uppercase text-forest" data-i18n="services.inhome.rate">From 60 RON / hr</span>
+        </article>
+
+        <article class="border border-white/10 p-10 flex flex-col gap-6 hover:border-forest transition-colors duration-300">
+          <div class="text-forest">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <ellipse cx="12" cy="15.5" rx="5" ry="4.5"/>
+              <ellipse cx="6.5" cy="12" rx="2" ry="2.5"/>
+              <ellipse cx="17.5" cy="12" rx="2" ry="2.5"/>
+              <ellipse cx="9.5" cy="9" rx="2" ry="2.5"/>
+              <ellipse cx="14.5" cy="9" rx="2" ry="2.5"/>
+            </svg>
+          </div>
+          <h3 class="font-serif text-2xl" data-i18n="services.walking.title">Park Walking</h3>
+          <p class="text-white/60 text-sm leading-relaxed flex-1" data-i18n="services.walking.desc">Daily walks in Sector 4's parks and green spaces.</p>
+          <span class="text-xs tracking-widest uppercase text-forest" data-i18n="services.walking.rate">From 60 RON / hr</span>
+        </article>
+
+        <article class="border border-white/10 p-10 flex flex-col gap-6 hover:border-forest transition-colors duration-300">
+          <div class="text-forest">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+            </svg>
+          </div>
+          <h3 class="font-serif text-2xl" data-i18n="services.overnight.title">Overnight Stay</h3>
+          <p class="text-white/60 text-sm leading-relaxed flex-1" data-i18n="services.overnight.desc">Round-the-clock care while you travel.</p>
+          <span class="text-xs tracking-widest uppercase text-forest" data-i18n="services.overnight.rate">From 60 RON / hr</span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════ HOW IT WORKS ══════════════════════ -->
+  <section aria-label="How it works" class="py-24 px-6" data-reveal>
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-4xl md:text-5xl text-center mb-16" data-i18n="how.title">How It Works</h2>
+      <ol class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center list-none">
+        <li class="flex flex-col items-center gap-4">
+          <span class="w-10 h-10 rounded-full border-2 border-forest text-forest font-serif text-lg flex items-center justify-center">1</span>
+          <p class="text-sm font-medium" data-i18n="how.step1">Select your pet</p>
+        </li>
+        <li class="flex flex-col items-center gap-4">
+          <span class="w-10 h-10 rounded-full border-2 border-forest text-forest font-serif text-lg flex items-center justify-center">2</span>
+          <p class="text-sm font-medium" data-i18n="how.step2">Choose a service</p>
+        </li>
+        <li class="flex flex-col items-center gap-4">
+          <span class="w-10 h-10 rounded-full border-2 border-forest text-forest font-serif text-lg flex items-center justify-center">3</span>
+          <p class="text-sm font-medium" data-i18n="how.step3">Pick your dates</p>
+        </li>
+        <li class="flex flex-col items-center gap-4">
+          <span class="w-10 h-10 rounded-full border-2 border-forest text-forest font-serif text-lg flex items-center justify-center">4</span>
+          <p class="text-sm font-medium" data-i18n="how.step4">Confirm on WhatsApp</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ══════════════════════ CONCIERGE FORM ══════════════════════ -->
+  <section id="booking-form" aria-label="Booking form" class="py-24 px-6 bg-stone-100" data-reveal>
+    <div class="max-w-lg mx-auto">
+      <h2 class="font-serif text-4xl text-center mb-2" data-i18n="form.title">Book Your Pet's Best Care</h2>
+      <p class="text-center text-sm text-charcoal/50 mb-10" data-i18n="form.subtitle">Get an instant estimate in 4 steps.</p>
+
+      <!-- Card -->
+      <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
+
+        <!-- Progress header -->
+        <div class="px-8 pt-8 mb-6">
+          <p id="step-counter" class="text-xs font-medium text-charcoal/40 mb-3">Step 1/4</p>
+          <div class="w-full h-1 bg-charcoal/10 rounded-full" aria-hidden="true">
+            <div id="form-progress" class="h-1 bg-forest rounded-full" style="width:25%;"></div>
+          </div>
+        </div>
+
+        <!-- Slide viewport -->
+        <div style="overflow:hidden; width:100%;">
+          <div id="slide-track">
+
+            <!-- STEP 1 — Pet Selection -->
+            <div class="step-slide px-8 pb-8" role="group" aria-labelledby="step1-heading">
+              <h3 id="step1-heading" class="font-serif text-2xl mb-1" data-i18n="form.step1.title">Who needs care?</h3>
+              <p class="text-sm text-charcoal/40 mb-6" data-i18n="form.step1.subtitle">Select your pet type and quantity.</p>
+              <p class="text-xs font-semibold uppercase tracking-wider text-charcoal/50 mb-4" data-i18n="form.step1.label">Pet type:</p>
+
+              <div class="flex flex-col gap-3 mb-8">
+                <!-- Dog -->
+                <div class="pet-row flex items-center justify-between px-5 py-4 rounded-2xl border border-charcoal/15 cursor-pointer hover:border-forest transition-colors duration-200 select-none"
+                     data-pet="dog" tabindex="0" aria-pressed="false">
+                  <span class="font-medium text-sm" data-i18n="form.step1.dog">Dog</span>
+                  <div class="flex items-center gap-3">
+                    <button class="qty-btn w-7 h-7 rounded-full border border-charcoal/20 text-sm hover:bg-forest hover:text-white hover:border-forest transition-colors"
+                            data-pet="dog" data-action="dec" aria-label="Decrease dog count">−</button>
+                    <span id="qty-dog" class="text-sm font-semibold w-5 text-center">1</span>
+                    <button class="qty-btn w-7 h-7 rounded-full border border-charcoal/20 text-sm hover:bg-forest hover:text-white hover:border-forest transition-colors"
+                            data-pet="dog" data-action="inc" aria-label="Increase dog count">+</button>
+                  </div>
+                </div>
+                <!-- Cat -->
+                <div class="pet-row flex items-center justify-between px-5 py-4 rounded-2xl border border-charcoal/15 cursor-pointer hover:border-forest transition-colors duration-200 select-none"
+                     data-pet="cat" tabindex="0" aria-pressed="false">
+                  <span class="font-medium text-sm" data-i18n="form.step1.cat">Cat</span>
+                  <div class="flex items-center gap-3">
+                    <button class="qty-btn w-7 h-7 rounded-full border border-charcoal/20 text-sm hover:bg-forest hover:text-white hover:border-forest transition-colors"
+                            data-pet="cat" data-action="dec" aria-label="Decrease cat count">−</button>
+                    <span id="qty-cat" class="text-sm font-semibold w-5 text-center">1</span>
+                    <button class="qty-btn w-7 h-7 rounded-full border border-charcoal/20 text-sm hover:bg-forest hover:text-white hover:border-forest transition-colors"
+                            data-pet="cat" data-action="inc" aria-label="Increase cat count">+</button>
+                  </div>
+                </div>
+                <!-- Other -->
+                <div class="pet-row flex items-center justify-between px-5 py-4 rounded-2xl border border-charcoal/15 cursor-pointer hover:border-forest transition-colors duration-200 select-none"
+                     data-pet="other" tabindex="0" aria-pressed="false">
+                  <span class="font-medium text-sm" data-i18n="form.step1.other">Other</span>
+                  <div class="flex items-center gap-3">
+                    <button class="qty-btn w-7 h-7 rounded-full border border-charcoal/20 text-sm hover:bg-forest hover:text-white hover:border-forest transition-colors"
+                            data-pet="other" data-action="dec" aria-label="Decrease other count">−</button>
+                    <span id="qty-other" class="text-sm font-semibold w-5 text-center">1</span>
+                    <button class="qty-btn w-7 h-7 rounded-full border border-charcoal/20 text-sm hover:bg-forest hover:text-white hover:border-forest transition-colors"
+                            data-pet="other" data-action="inc" aria-label="Increase other count">+</button>
+                  </div>
+                </div>
+                <!-- Other name field -->
+                <div id="other-pet-field" class="hidden">
+                  <input id="other-pet-name" type="text"
+                         class="w-full border border-charcoal/20 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-forest transition-colors"
+                         data-i18n-placeholder="form.step1.other_placeholder"
+                         placeholder="What pet?" />
+                </div>
+              </div>
+
+              <button id="step1-next"
+                      class="w-full bg-forest text-white py-3.5 rounded-full text-sm font-semibold hover:bg-forest/80 transition-colors"
+                      data-i18n="form.btn.next">Next →</button>
+            </div>
+
+            <!-- STEP 2 — Service Type -->
+            <div class="step-slide px-8 pb-8" role="group" aria-labelledby="step2-heading">
+              <h3 id="step2-heading" class="font-serif text-2xl mb-1" data-i18n="form.step2.title">What service?</h3>
+              <p class="text-sm text-charcoal/40 mb-6" data-i18n="form.step2.subtitle">Select the type of care you need.</p>
+              <p class="text-xs font-semibold uppercase tracking-wider text-charcoal/50 mb-4" data-i18n="form.step2.label">Service type:</p>
+              <div class="flex flex-wrap gap-3 mb-10">
+                <button class="service-card flex items-center gap-3 px-5 py-3 rounded-full border border-charcoal/15 hover:border-forest transition-colors duration-200 focus:outline-none"
+                        data-service="in-home" aria-pressed="false">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-forest" aria-hidden="true">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/>
+                  </svg>
+                  <span class="font-medium text-sm" data-i18n="form.step2.inhome">In-Home Sitting</span>
+                </button>
+                <button class="service-card flex items-center gap-3 px-5 py-3 rounded-full border border-charcoal/15 hover:border-forest transition-colors duration-200 focus:outline-none"
+                        data-service="walking" aria-pressed="false">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="shrink-0 text-forest" aria-hidden="true">
+                    <ellipse cx="12" cy="15.5" rx="5" ry="4.5"/><ellipse cx="6.5" cy="12" rx="2" ry="2.5"/>
+                    <ellipse cx="17.5" cy="12" rx="2" ry="2.5"/><ellipse cx="9.5" cy="9" rx="2" ry="2.5"/>
+                    <ellipse cx="14.5" cy="9" rx="2" ry="2.5"/>
+                  </svg>
+                  <span class="font-medium text-sm" data-i18n="form.step2.walking">Park Walking</span>
+                </button>
+                <button class="service-card flex items-center gap-3 px-5 py-3 rounded-full border border-charcoal/15 hover:border-forest transition-colors duration-200 focus:outline-none"
+                        data-service="overnight" aria-pressed="false">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-forest" aria-hidden="true">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+                  </svg>
+                  <span class="font-medium text-sm" data-i18n="form.step2.overnight">Overnight Stay</span>
+                </button>
+              </div>
+              <div class="flex gap-3">
+                <button id="step2-back"  class="flex-1 bg-stone-100 text-charcoal py-3.5 rounded-full text-sm font-semibold hover:bg-stone-200 transition-colors" data-i18n="form.btn.back">← Back</button>
+                <button id="step2-next" class="flex-[2] bg-forest text-white py-3.5 rounded-full text-sm font-semibold hover:bg-forest/80 transition-colors" data-i18n="form.btn.next">Next →</button>
+              </div>
+            </div>
+
+            <!-- STEP 3 — Schedule -->
+            <div class="step-slide px-8 pb-8" role="group" aria-labelledby="step3-heading">
+              <h3 id="step3-heading" class="font-serif text-2xl mb-1" data-i18n="form.step3.title">When?</h3>
+              <p class="text-sm text-charcoal/40 mb-6" data-i18n="form.step3.subtitle">Choose your dates and times.</p>
+              <div class="grid grid-cols-2 gap-4 mb-6">
+                <div class="flex flex-col gap-2">
+                  <label for="check-in" class="text-xs font-semibold uppercase tracking-wider text-charcoal/50" data-i18n="form.step3.checkin">Check-in</label>
+                  <input id="check-in" type="date" class="border border-charcoal/20 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-forest transition-colors" />
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label for="check-out" class="text-xs font-semibold uppercase tracking-wider text-charcoal/50" data-i18n="form.step3.checkout">Check-out</label>
+                  <input id="check-out" type="date" class="border border-charcoal/20 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-forest transition-colors" />
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label for="start-hour" class="text-xs font-semibold uppercase tracking-wider text-charcoal/50" data-i18n="form.step3.start_hour">Start hour</label>
+                  <select id="start-hour" class="border border-charcoal/20 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-forest transition-colors bg-white"></select>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label for="end-hour" class="text-xs font-semibold uppercase tracking-wider text-charcoal/50" data-i18n="form.step3.end_hour">End hour</label>
+                  <select id="end-hour" class="border border-charcoal/20 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-forest transition-colors bg-white"></select>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <button id="step3-back"  class="flex-1 bg-stone-100 text-charcoal py-3.5 rounded-full text-sm font-semibold hover:bg-stone-200 transition-colors" data-i18n="form.btn.back">← Back</button>
+                <button id="step3-next" class="flex-[2] bg-forest text-white py-3.5 rounded-full text-sm font-semibold hover:bg-forest/80 transition-colors" data-i18n="form.btn.next">Next →</button>
+              </div>
+            </div>
+
+            <!-- STEP 4 — Contact -->
+            <div class="step-slide px-8 pb-8" role="group" aria-labelledby="step4-heading">
+              <h3 id="step4-heading" class="font-serif text-2xl mb-1" data-i18n="form.step4.title">Your details</h3>
+              <p class="text-sm text-charcoal/40 mb-6" data-i18n="form.step4.subtitle">We'll confirm your booking via WhatsApp.</p>
+              <div class="flex flex-col gap-4 mb-8">
+                <div class="flex flex-col gap-2">
+                  <label for="contact-name" class="text-xs font-semibold uppercase tracking-wider text-charcoal/50" data-i18n="form.step4.name_label">Your name</label>
+                  <input id="contact-name" type="text" autocomplete="name"
+                         class="border border-charcoal/20 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-forest transition-colors"
+                         data-i18n-placeholder="form.step4.name_placeholder"
+                         placeholder="Your name" />
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label for="contact-whatsapp" class="text-xs font-semibold uppercase tracking-wider text-charcoal/50" data-i18n="form.step4.whatsapp_label">WhatsApp number</label>
+                  <input id="contact-whatsapp" type="tel" autocomplete="tel" inputmode="tel"
+                         class="border border-charcoal/20 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-forest transition-colors"
+                         placeholder="+40 7XX XXX XXX" />
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <button id="step4-back"      class="flex-1 bg-stone-100 text-charcoal py-3.5 rounded-full text-sm font-semibold hover:bg-stone-200 transition-colors" data-i18n="form.btn.back">← Back</button>
+                <button id="confirm-booking" class="flex-[2] bg-forest text-white py-3.5 rounded-full text-sm font-semibold hover:bg-forest/80 transition-colors" data-i18n="form.btn.confirm">Send Request</button>
+              </div>
+            </div>
+
+          </div><!-- /slide-track -->
+        </div><!-- /slide viewport -->
+      </div><!-- /card -->
+
+      <!-- Live Price Estimate -->
+      <div id="price-estimate" class="hidden mt-6 p-6 rounded-2xl border border-forest/25 bg-forest/5 text-center" aria-live="polite">
+        <p class="text-xs uppercase tracking-[0.25em] text-forest mb-3" data-i18n="form.estimate.label">Estimated Range</p>
+        <p id="estimate-range" class="font-serif text-4xl font-bold text-charcoal">— RON</p>
+        <p class="text-xs text-charcoal/40 mt-3" data-i18n="form.estimate.disclaimer">Final price confirmed at booking. Weekend &amp; holiday surcharges may apply.</p>
+        <p class="text-xs text-charcoal/50 mt-2 italic" data-i18n="form.estimate.special_needs">Disclaimer: Food, medication administration or special needs need to be discussed and added to the final budget.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════ TESTIMONIALS ══════════════════════ -->
+  <section aria-label="Testimonials" class="py-24" data-reveal>
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="font-serif text-4xl md:text-5xl text-center mb-16" data-i18n="testimonials.title">What Pet Parents Say</h2>
+    </div>
+
+    <!-- Carousel wrapper — clips overflow so only the track scrolls -->
+    <div class="relative">
+      <!-- Fade edges -->
+      <div class="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#f5f0ea] to-transparent z-10"></div>
+      <div class="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#f5f0ea] to-transparent z-10"></div>
+
+      <!-- Scrollable track -->
+      <div id="reviews-track"
+           class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 px-8"
+           style="-webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;">
+
+        <!-- Review card 1 -->
+        <blockquote class="bg-white rounded-2xl shadow-md p-6 flex flex-col gap-4 flex-shrink-0 w-72 snap-start">
+          <div class="flex items-center gap-3">
+            <!-- AVATAR 1: replace src with your real photo -->
+            <img src="https://placehold.co/48x48/d4c9b8/5c6b4e?text=I" alt="Ioana M." width="48" height="48"
+                 class="w-12 h-12 rounded-full object-cover ring-2 ring-forest/20">
+            <div>
+              <cite class="not-italic font-semibold text-sm text-charcoal uppercase tracking-widest">Ioana M.</cite>
+              <div class="flex gap-0.5 mt-0.5" aria-label="5 stars"><span class="text-amber-400 text-sm">★★★★★</span></div>
+            </div>
+          </div>
+          <p class="text-charcoal/70 text-sm leading-relaxed italic" data-i18n="testimonials.1.text">Our golden retriever was so calm when we came back. The care in Sector 4 is truly unmatched.</p>
+        </blockquote>
+
+        <!-- Review card 2 -->
+        <blockquote class="bg-white rounded-2xl shadow-md p-6 flex flex-col gap-4 flex-shrink-0 w-72 snap-start">
+          <div class="flex items-center gap-3">
+            <!-- AVATAR 2: replace src with your real photo -->
+            <img src="https://placehold.co/48x48/d4c9b8/5c6b4e?text=A" alt="Andrei P." width="48" height="48"
+                 class="w-12 h-12 rounded-full object-cover ring-2 ring-forest/20">
+            <div>
+              <cite class="not-italic font-semibold text-sm text-charcoal uppercase tracking-widest">Andrei P.</cite>
+              <div class="flex gap-0.5 mt-0.5" aria-label="5 stars"><span class="text-amber-400 text-sm">★★★★★</span></div>
+            </div>
+          </div>
+          <p class="text-charcoal/70 text-sm leading-relaxed italic" data-i18n="testimonials.2.text">Professional, punctual and genuinely passionate about animals. Highly recommended.</p>
+        </blockquote>
+
+        <!-- Review card 3 -->
+        <blockquote class="bg-white rounded-2xl shadow-md p-6 flex flex-col gap-4 flex-shrink-0 w-72 snap-start">
+          <div class="flex items-center gap-3">
+            <!-- AVATAR 3: replace src with your real photo -->
+            <img src="https://placehold.co/48x48/d4c9b8/5c6b4e?text=M" alt="Maria S." width="48" height="48"
+                 class="w-12 h-12 rounded-full object-cover ring-2 ring-forest/20">
+            <div>
+              <cite class="not-italic font-semibold text-sm text-charcoal uppercase tracking-widest">Maria S.</cite>
+              <div class="flex gap-0.5 mt-0.5" aria-label="5 stars"><span class="text-amber-400 text-sm">★★★★★</span></div>
+            </div>
+          </div>
+          <p class="text-charcoal/70 text-sm leading-relaxed italic" data-i18n="testimonials.3.text">Our two cats were treated like royalty. Booking through WhatsApp was effortless.</p>
+        </blockquote>
+
+        <!-- Review card 4 -->
+        <blockquote class="bg-white rounded-2xl shadow-md p-6 flex flex-col gap-4 flex-shrink-0 w-72 snap-start">
+          <div class="flex items-center gap-3">
+            <!-- AVATAR 4: replace src with your real photo -->
+            <img src="https://placehold.co/48x48/d4c9b8/5c6b4e?text=C" alt="Cristina D." width="48" height="48"
+                 class="w-12 h-12 rounded-full object-cover ring-2 ring-forest/20">
+            <div>
+              <cite class="not-italic font-semibold text-sm text-charcoal uppercase tracking-widest">Cristina D.</cite>
+              <div class="flex gap-0.5 mt-0.5" aria-label="5 stars"><span class="text-amber-400 text-sm">★★★★★</span></div>
+            </div>
+          </div>
+          <p class="text-charcoal/70 text-sm leading-relaxed italic">Left our beagle for a weekend and got photo updates every day. So reassuring!</p>
+        </blockquote>
+
+        <!-- Review card 5 -->
+        <blockquote class="bg-white rounded-2xl shadow-md p-6 flex flex-col gap-4 flex-shrink-0 w-72 snap-start">
+          <div class="flex items-center gap-3">
+            <!-- AVATAR 5: replace src with your real photo -->
+            <img src="https://placehold.co/48x48/d4c9b8/5c6b4e?text=R" alt="Radu T." width="48" height="48"
+                 class="w-12 h-12 rounded-full object-cover ring-2 ring-forest/20">
+            <div>
+              <cite class="not-italic font-semibold text-sm text-charcoal uppercase tracking-widest">Radu T.</cite>
+              <div class="flex gap-0.5 mt-0.5" aria-label="5 stars"><span class="text-amber-400 text-sm">★★★★★</span></div>
+            </div>
+          </div>
+          <p class="text-charcoal/70 text-sm leading-relaxed italic">My shy rescue dog warmed up immediately. That says everything about the patience and love shown here.</p>
+        </blockquote>
+
+        <!-- Review card 6 -->
+        <blockquote class="bg-white rounded-2xl shadow-md p-6 flex flex-col gap-4 flex-shrink-0 w-72 snap-start">
+          <div class="flex items-center gap-3">
+            <!-- AVATAR 6: replace src with your real photo -->
+            <img src="https://placehold.co/48x48/d4c9b8/5c6b4e?text=E" alt="Elena V." width="48" height="48"
+                 class="w-12 h-12 rounded-full object-cover ring-2 ring-forest/20">
+            <div>
+              <cite class="not-italic font-semibold text-sm text-charcoal uppercase tracking-widest">Elena V.</cite>
+              <div class="flex gap-0.5 mt-0.5" aria-label="5 stars"><span class="text-amber-400 text-sm">★★★★★</span></div>
+            </div>
+          </div>
+          <p class="text-charcoal/70 text-sm leading-relaxed italic">Quick to respond on WhatsApp and incredibly flexible with timing. Best petsitter in Sector 4 by far.</p>
+        </blockquote>
+
+      </div><!-- end track -->
+    </div><!-- end carousel wrapper -->
+
+    <!-- Arrow buttons -->
+    <div class="flex justify-center gap-4 mt-8">
+      <button id="reviews-prev" aria-label="Previous reviews"
+              class="w-10 h-10 rounded-full border border-forest/30 flex items-center justify-center text-forest hover:bg-forest hover:text-white transition-colors">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button id="reviews-next" aria-label="Next reviews"
+              class="w-10 h-10 rounded-full border border-forest/30 flex items-center justify-center text-forest hover:bg-forest hover:text-white transition-colors">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+
+    <style>#reviews-track::-webkit-scrollbar { display: none; }</style>
+    <script>
+      (function () {
+        const track = document.getElementById('reviews-track');
+        const cardWidth = () => track.querySelector('blockquote').offsetWidth + 24; // card + gap
+        document.getElementById('reviews-prev').addEventListener('click', () => {
+          track.scrollBy({ left: -cardWidth(), behavior: 'smooth' });
+        });
+        document.getElementById('reviews-next').addEventListener('click', () => {
+          track.scrollBy({ left: cardWidth(), behavior: 'smooth' });
+        });
+      })();
+    </script>
+  </section>
+
+  <!-- ══════════════════════ FOOTER ══════════════════════ -->
+  <footer class="bg-charcoal text-white" role="contentinfo">
+    <div class="max-w-5xl mx-auto px-6">
+
+      <!-- Three-column top section -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 py-16 border-b border-white/10">
+
+        <!-- Brand -->
+        <div>
+          <p class="font-serif text-2xl mb-2" data-i18n="nav.brand">Follow My Leash</p>
+          <p class="text-xs text-white/40 tracking-widest uppercase mb-5" data-i18n="footer.tagline">Premium petsitting, exclusively Sector 4.</p>
+          <p class="text-sm text-white/50 leading-relaxed" data-i18n="footer.desc">Trusted, insured and local pet care in Sector 4, Bucharest — every day of the year.</p>
+        </div>
+
+        <!-- Legal links -->
+        <div>
+          <p class="text-xs font-semibold tracking-[0.2em] uppercase text-white/30 mb-5" data-i18n="footer.legal.title">Legal</p>
+          <ul class="flex flex-col gap-3">
+            <li>
+              <button data-modal="terms"
+                      class="text-sm text-white/60 hover:text-white transition-colors text-left"
+                      data-i18n="footer.terms">Terms &amp; Conditions</button>
+            </li>
+            <li>
+              <button data-modal="privacy"
+                      class="text-sm text-white/60 hover:text-white transition-colors text-left"
+                      data-i18n="footer.privacy">Privacy Policy</button>
+            </li>
+            <li>
+              <button data-modal="cookies"
+                      class="text-sm text-white/60 hover:text-white transition-colors text-left"
+                      data-i18n="footer.cookies">Cookie Policy</button>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <p class="text-xs font-semibold tracking-[0.2em] uppercase text-white/30 mb-5" data-i18n="footer.contact.title">Contact</p>
+          <ul class="flex flex-col gap-3">
+            <li><span class="text-sm text-white/50" data-i18n="footer.location">Sector 4, Bucharest</span></li>
+            <li>
+              <a href="https://wa.me/40772159680" target="_blank" rel="noopener noreferrer"
+                 class="text-forest hover:text-forest/70 transition-colors font-medium text-sm"
+                 data-i18n="footer.whatsapp">WhatsApp Us</a>
+            </li>
+            <li>
+              <a href="mailto:emg.digitalmedia@gmail.com"
+                 class="text-sm text-white/50 hover:text-white/80 transition-colors">
+                emg.digitalmedia@gmail.com
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom compliance strip -->
+      <div class="py-7 flex flex-col md:flex-row gap-3 items-center justify-between text-xs text-white/30">
+        <p data-i18n="footer.copyright">© 2026 Follow My Leash. All rights reserved.</p>
+        <p data-i18n="footer.compliance">GDPR Compliant · ANPC · ANSPDCP · Romanian Law 506/2004</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ══════════════════════ LEGAL MODALS ══════════════════════ -->
+
+  <!-- TERMS & CONDITIONS -->
+  <div id="modal-terms" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="terms-title">
+    <div class="modal-box">
+      <button class="modal-close absolute top-5 right-5 w-9 h-9 flex items-center justify-center text-charcoal/40 hover:text-charcoal transition-colors text-xl leading-none" aria-label="Close">✕</button>
+
+      <!-- English -->
+      <div class="lang-en">
+        <h2 id="terms-title" class="font-serif text-3xl mb-1">Terms &amp; Conditions</h2>
+        <p class="modal-effective">Follow My Leash · Effective 16 April 2026</p>
+        <hr class="modal-divider">
+
+        <h3>1. Service Provider</h3>
+        <p>Follow My Leash ("we", "us") is a professional pet-sitting service operating exclusively in Sector 4, Bucharest, Romania. Contact: WhatsApp +40 772 159 680 | emg.digitalmedia@gmail.com</p>
+
+        <h3>2. Booking &amp; Contract Formation</h3>
+        <p>Submitting a request through this website constitutes a non-binding enquiry. A binding service contract is formed only upon written confirmation by us via WhatsApp. We reserve the right to decline any booking.</p>
+
+        <h3>3. Prices &amp; Payment</h3>
+        <p>All prices are in Romanian Leu (RON) and include VAT where applicable. The base rate starts from 60 RON/hour per pet. Weekend (Saturday–Sunday) and national public-holiday surcharges, as well as additional charges for medication administration or special-needs care, are agreed in writing before services begin. Payment is due upon service completion unless otherwise agreed in writing.</p>
+
+        <h3>4. Cancellation &amp; Refunds</h3>
+        <ul>
+          <li>Cancellation more than 48 hours before the scheduled start: no charge.</li>
+          <li>Cancellation within 48 hours of the scheduled start: 50% of the agreed fee.</li>
+          <li>No-show or cancellation on the day of service: 100% of the agreed fee.</li>
+        </ul>
+
+        <h3>5. Right of Withdrawal (Distance Contracts)</h3>
+        <p>Pursuant to Government Emergency Ordinance no. 34/2014 on consumer rights in distance contracts (transposing EU Directive 2011/83/EU), you have the right to withdraw from this contract within 14 calendar days of receiving written booking confirmation, without giving a reason and without penalty. If you expressly requested that services begin before the withdrawal period expires and services have commenced, you lose the right of withdrawal in respect of services already performed.</p>
+        <p>To exercise withdrawal, notify us via WhatsApp +40 772 159 680 with a clear written statement before the deadline.</p>
+
+        <h3>6. Our Responsibilities</h3>
+        <p>We will perform all services with reasonable care and skill. We carry third-party liability insurance. Our total liability for any single incident or claim is limited to the total fee paid for the relevant booking.</p>
+
+        <h3>7. Your Responsibilities</h3>
+        <p>You must provide accurate information about your pet's health, behaviour, diet and any medications. You are responsible for ensuring vaccinations are current. You agree to indemnify us against claims arising from information you failed to disclose.</p>
+
+        <h3>8. Governing Law &amp; Dispute Resolution</h3>
+        <p>These terms are governed by Romanian law. In the event of a dispute, amicable resolution is encouraged first. Consumer disputes may be referred to the National Authority for Consumer Protection (ANPC) — <a href="https://www.anpc.ro" target="_blank" rel="noopener noreferrer">www.anpc.ro</a> — or submitted via the EU Online Dispute Resolution platform at <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer">ec.europa.eu/consumers/odr</a>. Litigation falls under the jurisdiction of the competent courts in Bucharest, Sector 4.</p>
+      </div>
+
+      <!-- Romanian -->
+      <div class="lang-ro">
+        <h2 class="font-serif text-3xl mb-1">Termeni și Condiții</h2>
+        <p class="modal-effective">Follow My Leash · În vigoare din 16 aprilie 2026</p>
+        <hr class="modal-divider">
+
+        <h3>1. Furnizorul de servicii</h3>
+        <p>Follow My Leash ("noi") este un serviciu profesionist de îngrijire animale de companie care operează exclusiv în Sectorul 4, București, România. Contact: WhatsApp +40 772 159 680 | emg.digitalmedia@gmail.com</p>
+
+        <h3>2. Rezervare și încheierea contractului</h3>
+        <p>Trimiterea unei cereri prin intermediul acestui site constituie o solicitare neobligatorie. Un contract de servicii obligatoriu se încheie numai la confirmarea scrisă de către noi prin WhatsApp. Ne rezervăm dreptul de a refuza orice rezervare.</p>
+
+        <h3>3. Prețuri și plată</h3>
+        <p>Toate prețurile sunt exprimate în Lei Românești (RON) și includ TVA, acolo unde este cazul. Tariful de bază începe de la 60 RON/oră per animal. Majorările pentru weekend (sâmbătă–duminică) și sărbători legale naționale, precum și tarifele suplimentare pentru administrarea medicamentelor sau îngrijire specială, sunt agreate în scris înainte de începerea serviciilor. Plata este scadentă la finalizarea serviciului, dacă nu se convine altfel în scris.</p>
+
+        <h3>4. Anulare și rambursări</h3>
+        <ul>
+          <li>Anulare cu mai mult de 48 de ore înainte de data programată: fără costuri.</li>
+          <li>Anulare în mai puțin de 48 de ore de la data programată: 50% din tariful agreat.</li>
+          <li>Neprezentare sau anulare în ziua serviciului: 100% din tariful agreat.</li>
+        </ul>
+
+        <h3>5. Dreptul de retragere (contracte la distanță)</h3>
+        <p>În conformitate cu Ordonanța de Urgență a Guvernului nr. 34/2014 privind drepturile consumatorilor în cadrul contractelor la distanță (transpunând Directiva UE 2011/83/UE), aveți dreptul de a vă retrage din prezentul contract în termen de 14 zile calendaristice de la primirea confirmării scrise a rezervării, fără a fi necesar să indicați un motiv și fără penalități. Dacă ați solicitat expres începerea serviciilor înainte de expirarea perioadei de retragere și serviciile au început, pierdeți dreptul de retragere pentru serviciile deja prestate.</p>
+        <p>Pentru a exercita retragerea, notificați-ne prin WhatsApp +40 772 159 680 cu o declarație scrisă clară înainte de termenul limită.</p>
+
+        <h3>6. Responsabilitățile noastre</h3>
+        <p>Vom presta toate serviciile cu grijă și competență rezonabile. Deținem asigurare de răspundere civilă față de terți. Răspunderea noastră totală pentru orice incident sau reclamație este limitată la suma totală plătită pentru rezervarea în cauză.</p>
+
+        <h3>7. Responsabilitățile dvs.</h3>
+        <p>Trebuie să furnizați informații corecte despre sănătatea, comportamentul, dieta și medicamentele animalului. Sunteți responsabil de asigurarea la zi a vaccinurilor. Sunteți de acord să ne despăgubiți pentru orice pretenții rezultate din informații pe care nu le-ați dezvăluit.</p>
+
+        <h3>8. Legea aplicabilă și soluționarea litigiilor</h3>
+        <p>Acești termeni sunt guvernați de legea română. În caz de litigiu, soluționarea amiabilă este încurajată în primul rând. Litigiile de consum pot fi adresate Autorității Naționale pentru Protecția Consumatorilor (ANPC) — <a href="https://www.anpc.ro" target="_blank" rel="noopener noreferrer">www.anpc.ro</a> — sau pot fi depuse prin platforma UE de soluționare online a litigiilor la <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer">ec.europa.eu/consumers/odr</a>. Litigiile sunt de competența instanțelor din București, Sectorul 4.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIVACY POLICY -->
+  <div id="modal-privacy" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
+    <div class="modal-box">
+      <button class="modal-close absolute top-5 right-5 w-9 h-9 flex items-center justify-center text-charcoal/40 hover:text-charcoal transition-colors text-xl leading-none" aria-label="Close">✕</button>
+
+      <!-- English -->
+      <div class="lang-en">
+        <h2 id="privacy-title" class="font-serif text-3xl mb-1">Privacy Policy</h2>
+        <p class="modal-effective">Follow My Leash · Effective 16 April 2026 · Regulation (EU) 2016/679 (GDPR)</p>
+        <hr class="modal-divider">
+
+        <h3>1. Who We Are (Data Controller)</h3>
+        <p>Follow My Leash is the data controller for personal data collected through this website. We operate in Sector 4, Bucharest, Romania. Contact: WhatsApp +40 772 159 680 | emg.digitalmedia@gmail.com</p>
+
+        <h3>2. What Data We Collect</h3>
+        <p>Through the booking form on this website we collect only: your name and your WhatsApp phone number. No other personal data (email address, postal address, payment-card data) is collected through this website.</p>
+
+        <h3>3. How We Use Your Data</h3>
+        <p>Your data is used solely to confirm, manage and deliver your pet-sitting booking. We do not use it for marketing purposes without your explicit prior consent.</p>
+
+        <h3>4. Legal Basis (GDPR Art. 6)</h3>
+        <p>Processing is based on Art. 6(1)(b) GDPR — necessary for the performance of a contract to which you are a party (or to take steps at your request prior to entering into a contract).</p>
+
+        <h3>5. Data Retention</h3>
+        <p>We retain your personal data for a maximum of 2 years from the date of your last service or last contact with us. After this period your data is permanently and irreversibly deleted.</p>
+
+        <h3>6. Data Sharing &amp; Transfers</h3>
+        <p>When you click "Send Request", your booking details are transmitted to WhatsApp (Meta Platforms Ireland Ltd., 4 Grand Canal Square, Dublin 2, Ireland) for the purpose of confirming your booking. Meta's privacy policy governs data held on their platform. We do not sell, rent or share your personal data with any other third party. Meta may transfer data outside the EEA subject to appropriate safeguards under Art. 46 GDPR.</p>
+
+        <h3>7. Your Rights Under GDPR</h3>
+        <p>You have the right to: access your personal data (Art. 15); rectify inaccurate data (Art. 16); request erasure ("right to be forgotten", Art. 17); restrict processing (Art. 18); receive your data in a portable format (Art. 20); object to processing (Art. 21). To exercise any right, contact us at the details in Section 1. We will respond within 30 days.</p>
+
+        <h3>8. Supervisory Authority</h3>
+        <p>You have the right to lodge a complaint with the Romanian supervisory authority for personal data protection (ANSPDCP):</p>
+        <ul>
+          <li>B-dul G-ral Gheorghe Magheru 28–30, Sector 1, 010336 București</li>
+          <li><a href="mailto:anspdcp@dataprotection.ro">anspdcp@dataprotection.ro</a></li>
+          <li><a href="https://www.dataprotection.ro" target="_blank" rel="noopener noreferrer">www.dataprotection.ro</a></li>
+          <li>Tel: +40 31 805 9211</li>
+        </ul>
+      </div>
+
+      <!-- Romanian -->
+      <div class="lang-ro">
+        <h2 class="font-serif text-3xl mb-1">Politica de Confidențialitate</h2>
+        <p class="modal-effective">Follow My Leash · În vigoare din 16 aprilie 2026 · Regulamentul (UE) 2016/679 (GDPR)</p>
+        <hr class="modal-divider">
+
+        <h3>1. Cine suntem (Operatorul de date)</h3>
+        <p>Follow My Leash este operatorul de date cu caracter personal colectate prin intermediul acestui site web. Activăm în Sectorul 4, București, România. Contact: WhatsApp +40 772 159 680 | emg.digitalmedia@gmail.com</p>
+
+        <h3>2. Ce date colectăm</h3>
+        <p>Prin formularul de rezervare de pe acest site colectăm exclusiv: numele dvs. și numărul dvs. de telefon WhatsApp. Nu colectăm alte date cu caracter personal (adresă de e-mail, adresă poștală, date de card de plată) prin intermediul acestui site.</p>
+
+        <h3>3. Cum utilizăm datele dvs.</h3>
+        <p>Datele dvs. sunt utilizate exclusiv pentru confirmarea, gestionarea și prestarea serviciului de îngrijire animale rezervat. Nu le utilizăm în scopuri de marketing fără consimțământul dvs. explicit prealabil.</p>
+
+        <h3>4. Temeiul legal (Art. 6 GDPR)</h3>
+        <p>Prelucrarea se bazează pe Art. 6(1)(b) GDPR — necesară pentru executarea unui contract la care sunteți parte (sau pentru a lua măsuri la cererea dvs. înainte de încheierea unui contract).</p>
+
+        <h3>5. Perioada de retenție</h3>
+        <p>Reținem datele dvs. cu caracter personal pentru maximum 2 ani de la data ultimului serviciu sau a ultimului contact cu noi. După această perioadă, datele dvs. sunt șterse definitiv și ireversibil.</p>
+
+        <h3>6. Partajarea și transferul datelor</h3>
+        <p>Când apăsați „Trimite Cererea", detaliile rezervării dvs. sunt transmise către WhatsApp (Meta Platforms Ireland Ltd., 4 Grand Canal Square, Dublin 2, Irlanda) în scopul confirmării rezervării. Politica de confidențialitate a Meta reglementează datele deținute pe platforma lor. Nu vindem, nu închiriem și nu partajăm datele dvs. cu caracter personal cu nicio altă terță parte. Meta poate transfera date în afara SEE în baza garanțiilor adecvate prevăzute la Art. 46 GDPR.</p>
+
+        <h3>7. Drepturile dvs. în temeiul GDPR</h3>
+        <p>Aveți dreptul de a: accesa datele personale (Art. 15); corecta datele inexacte (Art. 16); solicita ștergerea — „dreptul de a fi uitat" (Art. 17); restricționa prelucrarea (Art. 18); primi datele într-un format portabil (Art. 20); obiecta față de prelucrare (Art. 21). Pentru exercitarea oricărui drept, contactați-ne la detaliile din Secțiunea 1. Veți primi un răspuns în termen de 30 de zile.</p>
+
+        <h3>8. Autoritatea de supraveghere</h3>
+        <p>Aveți dreptul de a depune o plângere la autoritatea română de supraveghere a protecției datelor cu caracter personal (ANSPDCP):</p>
+        <ul>
+          <li>B-dul G-ral Gheorghe Magheru 28–30, Sector 1, 010336 București</li>
+          <li><a href="mailto:anspdcp@dataprotection.ro">anspdcp@dataprotection.ro</a></li>
+          <li><a href="https://www.dataprotection.ro" target="_blank" rel="noopener noreferrer">www.dataprotection.ro</a></li>
+          <li>Tel: +40 31 805 9211</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- COOKIE POLICY -->
+  <div id="modal-cookies" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="cookies-title">
+    <div class="modal-box">
+      <button class="modal-close absolute top-5 right-5 w-9 h-9 flex items-center justify-center text-charcoal/40 hover:text-charcoal transition-colors text-xl leading-none" aria-label="Close">✕</button>
+
+      <!-- English -->
+      <div class="lang-en">
+        <h2 id="cookies-title" class="font-serif text-3xl mb-1">Cookie &amp; Storage Policy</h2>
+        <p class="modal-effective">Follow My Leash · Effective 16 April 2026 · Directive 2002/58/EC · Romanian Law 506/2004</p>
+        <hr class="modal-divider">
+
+        <h3>1. Do We Use Cookies?</h3>
+        <p>This website does not use cookies of any kind — no session cookies, no persistent cookies, no tracking cookies, no advertising cookies.</p>
+
+        <h3>2. What We Do Use</h3>
+        <p>We use a single <strong>browser localStorage</strong> entry with the key <code>fml_lang</code> to remember your language preference (English or Romanian) between page visits. localStorage is a client-side storage mechanism; no data from it is ever sent to our servers or to any third party.</p>
+
+        <h3>3. Why No Consent Banner Is Required</h3>
+        <p>This storage entry is strictly necessary for the basic language-switching functionality of the website. It contains no personal data, does not track your behaviour, and is not shared with any third party. It therefore falls within the exemption for "strictly necessary" storage provided by Directive 2002/58/EC (ePrivacy Directive), transposed into Romanian law by <strong>Law no. 506/2004</strong> on the processing of personal data and the protection of privacy in the electronic communications sector.</p>
+
+        <h3>4. Third-Party Resources</h3>
+        <p>This page loads fonts from <strong>Google Fonts</strong> (fonts.googleapis.com, fonts.gstatic.com) and the Tailwind CSS framework from a CDN. These external requests may expose your IP address to Google and Cloudflare respectively. For details, please consult their respective privacy policies.</p>
+
+        <h3>5. How to Remove Stored Data</h3>
+        <ul>
+          <li><strong>Chrome / Edge:</strong> Settings → Privacy &amp; Security → Clear browsing data → Cookies and other site data.</li>
+          <li><strong>Firefox:</strong> Settings → Privacy &amp; Security → Cookies and Site Data → Clear Data.</li>
+          <li><strong>Safari:</strong> Preferences → Privacy → Manage Website Data → Remove for this site.</li>
+          <li>Or open DevTools (F12) → Application → Local Storage → delete the <code>fml_lang</code> key for this domain.</li>
+        </ul>
+      </div>
+
+      <!-- Romanian -->
+      <div class="lang-ro">
+        <h2 class="font-serif text-3xl mb-1">Politica privind Cookie-urile și Stocarea</h2>
+        <p class="modal-effective">Follow My Leash · În vigoare din 16 aprilie 2026 · Directiva 2002/58/CE · Legea 506/2004</p>
+        <hr class="modal-divider">
+
+        <h3>1. Utilizăm cookie-uri?</h3>
+        <p>Acest site web nu utilizează cookie-uri de niciun fel — nici cookie-uri de sesiune, nici persistente, nici de urmărire, nici de publicitate.</p>
+
+        <h3>2. Ce utilizăm</h3>
+        <p>Utilizăm o singură înregistrare în <strong>browser localStorage</strong> cu cheia <code>fml_lang</code> pentru a reține preferința dvs. de limbă (Engleză sau Română) între vizite. localStorage este un mecanism de stocare la nivelul clientului; nicio dată din acesta nu este trimisă serverelor noastre sau unor terți.</p>
+
+        <h3>3. De ce nu este necesară o fereastră de consimțământ</h3>
+        <p>Această înregistrare de stocare este strict necesară pentru funcționalitatea de bază a schimbării limbii site-ului. Nu conține date cu caracter personal, nu urmărește comportamentul dvs. și nu este partajată cu nicio terță parte. Prin urmare, se încadrează în excepția pentru stocarea „strict necesară" prevăzută de Directiva 2002/58/CE (Directiva ePrivacy), transpusă în legislația română prin <strong>Legea nr. 506/2004</strong> privind prelucrarea datelor cu caracter personal și protecția vieții private în sectorul comunicațiilor electronice.</p>
+
+        <h3>4. Resurse terțe</h3>
+        <p>Această pagină încarcă fonturi de la <strong>Google Fonts</strong> (fonts.googleapis.com, fonts.gstatic.com) și framework-ul Tailwind CSS de pe un CDN. Aceste solicitări externe pot face ca adresa IP să fie vizibilă pentru Google, respectiv Cloudflare. Consultați politicile lor de confidențialitate pentru detalii.</p>
+
+        <h3>5. Cum să eliminați datele stocate</h3>
+        <ul>
+          <li><strong>Chrome / Edge:</strong> Setări → Confidențialitate și Securitate → Ștergeți datele de navigare → Cookie-uri și alte date de site.</li>
+          <li><strong>Firefox:</strong> Setări → Confidențialitate și Securitate → Cookie-uri și Date de Site → Ștergeți Datele.</li>
+          <li><strong>Safari:</strong> Preferințe → Confidențialitate → Gestionați datele site-ului → Eliminați pentru acest site.</li>
+          <li>Sau deschideți DevTools (F12) → Application → Local Storage → ștergeți cheia <code>fml_lang</code> pentru acest domeniu.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════ JAVASCRIPT ══════════════════════ -->
+  <script>
+    // ─── Translations ────────────────────────────────────────────────────────
+    const TRANSLATIONS = {
+      en: {
+        'nav.brand':                  'Follow My Leash',
+        'hero.headline':              'Premium Pet Care, Personalised for Sector 4',
+        'hero.subhead':               'Trusted, insured and dedicated sitters — right in your neighbourhood.',
+        'hero.cta':                   'Get Your Free Quote',
+        'about.sector4':              'Sector 4 Specialist',
+        'about.sector4.desc':         'We know every park, vet and shortcut in your neighbourhood.',
+        'about.licensed':             'Licensed & Insured',
+        'about.licensed.desc':        'Full liability coverage for your total peace of mind.',
+        'about.rated':                '5★ Rated',
+        'about.rated.desc':           'Dozens of happy pet parents across Sector 4.',
+        'services.title':             'Our Services',
+        'services.inhome.title':      'In-Home Sitting',
+        'services.inhome.desc':       'We come to you so your pet stays comfortable in their own space.',
+        'services.inhome.rate':       'From 60 RON / hr',
+        'services.walking.title':     'Park Walking',
+        'services.walking.desc':      "Daily walks in Sector 4's parks and green spaces.",
+        'services.walking.rate':      'From 60 RON / hr',
+        'services.overnight.title':   'Overnight Stay',
+        'services.overnight.desc':    'Round-the-clock care while you travel.',
+        'services.overnight.rate':    'From 60 RON / hr',
+        'how.title':                  'How It Works',
+        'how.step1':                  'Select your pet',
+        'how.step2':                  'Choose a service',
+        'how.step3':                  'Pick your dates',
+        'how.step4':                  'Confirm on WhatsApp',
+        'form.title':                 "Book Your Pet's Best Care",
+        'form.subtitle':              'Get an instant estimate in 4 steps.',
+        'form.step1.title':           'Who needs care?',
+        'form.step1.subtitle':        'Select your pet type and quantity.',
+        'form.step1.label':           'Pet type:',
+        'form.step1.dog':             'Dog',
+        'form.step1.cat':             'Cat',
+        'form.step1.other':           'Other',
+        'form.step1.other_placeholder':'What pet?',
+        'form.step2.title':           'What service?',
+        'form.step2.subtitle':        'Select the type of care you need.',
+        'form.step2.label':           'Service type:',
+        'form.step2.inhome':          'In-Home Sitting',
+        'form.step2.walking':         'Park Walking',
+        'form.step2.overnight':       'Overnight Stay',
+        'form.step3.title':           'When?',
+        'form.step3.subtitle':        'Choose your dates and times.',
+        'form.step3.checkin':         'Check-in',
+        'form.step3.checkout':        'Check-out',
+        'form.step3.start_hour':      'Start hour',
+        'form.step3.end_hour':        'End hour',
+        'form.step4.title':           'Your details',
+        'form.step4.subtitle':        "We'll confirm your booking via WhatsApp.",
+        'form.step4.name_label':      'Your name',
+        'form.step4.name_placeholder':'Your name',
+        'form.step4.whatsapp_label':  'WhatsApp number',
+        'form.btn.next':              'Next →',
+        'form.btn.back':              '← Back',
+        'form.btn.confirm':           'Send Request',
+        'form.estimate.label':        'Estimated Range',
+        'form.estimate.disclaimer':   'Final price confirmed at booking. Weekend & holiday surcharges may apply.',
+        'form.estimate.special_needs':'Disclaimer: Food, medication administration or special needs need to be discussed and added to the final budget.',
+        'testimonials.title':         'What Pet Parents Say',
+        'testimonials.1.text':        'Our golden retriever was so calm when we came back. The care in Sector 4 is truly unmatched.',
+        'testimonials.1.author':      'Ioana M., Tineretului',
+        'testimonials.2.text':        'Professional, punctual and genuinely passionate about animals. Highly recommended.',
+        'testimonials.2.author':      'Andrei P., Brâncuși',
+        'testimonials.3.text':        'Our two cats were treated like royalty. Booking through WhatsApp was effortless.',
+        'testimonials.3.author':      'Maria S., Berceni',
+        'footer.tagline':             'Premium petsitting, exclusively Sector 4.',
+        'footer.desc':                'Trusted, insured and local pet care in Sector 4, Bucharest — every day of the year.',
+        'footer.legal.title':         'Legal',
+        'footer.terms':               'Terms & Conditions',
+        'footer.privacy':             'Privacy Policy',
+        'footer.cookies':             'Cookie Policy',
+        'footer.contact.title':       'Contact',
+        'footer.location':            'Sector 4, Bucharest',
+        'footer.whatsapp':            'WhatsApp Us',
+        'footer.copyright':           '© 2026 Follow My Leash. All rights reserved.',
+        'footer.compliance':          'GDPR Compliant · ANPC · ANSPDCP · Romanian Law 506/2004',
+        'step.prefix':                'Step',
+      },
+      ro: {
+        'nav.brand':                  'Follow My Leash',
+        'hero.headline':              'Îngrijire Premium, Personalizată pentru Sectorul 4',
+        'hero.subhead':               'Îngrijitori de încredere, asigurați și dedicați — chiar în cartierul tău.',
+        'hero.cta':                   'Obține o Ofertă Gratuită',
+        'about.sector4':              'Specialist Sectorul 4',
+        'about.sector4.desc':         'Cunoaștem fiecare parc, veterinar și scurtătură din cartier.',
+        'about.licensed':             'Licențiați & Asigurați',
+        'about.licensed.desc':        'Acoperire completă de răspundere civilă pentru liniștea ta totală.',
+        'about.rated':                'Evaluați 5★',
+        'about.rated.desc':           'Zeci de proprietari de animale fericiți din Sectorul 4.',
+        'services.title':             'Serviciile Noastre',
+        'services.inhome.title':      'Îngrijire la Domiciliu',
+        'services.inhome.desc':       'Venim la tine acasă, astfel încât animalul tău să rămână confortabil.',
+        'services.inhome.rate':       'De la 60 RON / oră',
+        'services.walking.title':     'Plimbare în Parc',
+        'services.walking.desc':      'Plimbări zilnice în parcurile și spațiile verzi din Sectorul 4.',
+        'services.walking.rate':      'De la 60 RON / oră',
+        'services.overnight.title':   'Cazare peste Noapte',
+        'services.overnight.desc':    'Îngrijire non-stop cât timp ești plecat.',
+        'services.overnight.rate':    'De la 60 RON / oră',
+        'how.title':                  'Cum Funcționează',
+        'how.step1':                  'Selectează animalul',
+        'how.step2':                  'Alege serviciul',
+        'how.step3':                  'Alege datele',
+        'how.step4':                  'Confirmă pe WhatsApp',
+        'form.title':                 'Rezervă îngrijirea perfectă pentru Animalul tău',
+        'form.subtitle':              'Obține o estimare instantanee în 4 pași.',
+        'form.step1.title':           'Cine are nevoie de îngrijire?',
+        'form.step1.subtitle':        'Selectează tipul animalului și cantitatea.',
+        'form.step1.label':           'Tipul animalului:',
+        'form.step1.dog':             'Câine',
+        'form.step1.cat':             'Pisică',
+        'form.step1.other':           'Alt animal',
+        'form.step1.other_placeholder':'Ce animal?',
+        'form.step2.title':           'Ce serviciu?',
+        'form.step2.subtitle':        'Selectează tipul de îngrijire de care ai nevoie.',
+        'form.step2.label':           'Tipul serviciului:',
+        'form.step2.inhome':          'Îngrijire la Domiciliu',
+        'form.step2.walking':         'Plimbare în Parc',
+        'form.step2.overnight':       'Cazare peste Noapte',
+        'form.step3.title':           'Când?',
+        'form.step3.subtitle':        'Alege datele și orele.',
+        'form.step3.checkin':         'Data sosirii',
+        'form.step3.checkout':        'Data plecării',
+        'form.step3.start_hour':      'Ora de început',
+        'form.step3.end_hour':        'Ora de sfârșit',
+        'form.step4.title':           'Detaliile tale',
+        'form.step4.subtitle':        'Vom confirma rezervarea prin WhatsApp.',
+        'form.step4.name_label':      'Numele tău',
+        'form.step4.name_placeholder':'Numele tău',
+        'form.step4.whatsapp_label':  'Număr WhatsApp',
+        'form.btn.next':              'Înainte →',
+        'form.btn.back':              '← Înapoi',
+        'form.btn.confirm':           'Trimite Cererea',
+        'form.estimate.label':        'Estimare',
+        'form.estimate.disclaimer':   'Prețul final se confirmă la rezervare. Se pot aplica majorări pentru weekend și sărbători.',
+        'form.estimate.special_needs':'Notă: Hrana, administrarea medicamentelor sau nevoile speciale trebuie discutate și adăugate la bugetul final.',
+        'testimonials.title':         'Ce Spun Proprietarii',
+        'testimonials.1.text':        'Retrieverul nostru golden era atât de relaxat când ne-am întors. Îngrijirea în Sectorul 4 este de neegalat.',
+        'testimonials.1.author':      'Ioana M., Tineretului',
+        'testimonials.2.text':        'Profesioniști, punctuali și cu adevărat pasionați de animale. Recomand tuturor din Sectorul 4.',
+        'testimonials.2.author':      'Andrei P., Brâncuși',
+        'testimonials.3.text':        'Cele două pisici ale noastre au fost tratate ca niște regine. Rezervarea prin WhatsApp a fost extrem de simplă.',
+        'testimonials.3.author':      'Maria S., Berceni',
+        'footer.tagline':             'Îngrijire premium pentru animale, exclusiv Sectorul 4.',
+        'footer.desc':                'Îngrijitori de încredere, asigurați și locali în Sectorul 4, București — în fiecare zi a anului.',
+        'footer.legal.title':         'Juridic',
+        'footer.terms':               'Termeni și Condiții',
+        'footer.privacy':             'Politica de Confidențialitate',
+        'footer.cookies':             'Politica de Cookie-uri',
+        'footer.contact.title':       'Contact',
+        'footer.location':            'Sectorul 4, București',
+        'footer.whatsapp':            'Scrie-ne pe WhatsApp',
+        'footer.copyright':           '© 2026 Follow My Leash. Toate drepturile rezervate.',
+        'footer.compliance':          'Conform GDPR · ANPC · ANSPDCP · Legea 506/2004',
+        'step.prefix':                'Pasul',
+      }
+    }
+
+    // ─── i18n ────────────────────────────────────────────────────────────────
+    let currentLang = localStorage.getItem('fml_lang') || 'en'
+    let currentStep = 1
+
+    function t(key) {
+      return (TRANSLATIONS[currentLang] || TRANSLATIONS.en)[key] || key
+    }
+
+    function setLanguage(lang) {
+      currentLang = lang
+      localStorage.setItem('fml_lang', lang)
+
+      // Swap textContent for data-i18n elements
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n')
+        const text = t(key)
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+          el.placeholder = text
+        } else {
+          el.textContent = text
+        }
+      })
+
+      // Swap placeholder for data-i18n-placeholder elements
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        el.placeholder = t(el.getAttribute('data-i18n-placeholder'))
+      })
+
+      // Update lang toggle button label
+      const btn = document.getElementById('lang-toggle')
+      if (btn) btn.textContent = lang === 'en' ? 'RO' : 'EN'
+
+      // Show/hide language-specific content panels (legal modals)
+      document.querySelectorAll('.lang-en').forEach(el => el.style.display = lang === 'en' ? '' : 'none')
+      document.querySelectorAll('.lang-ro').forEach(el => el.style.display = lang === 'ro' ? '' : 'none')
+
+      // Update step counter
+      updateStepCounter()
+    }
+
+    function updateStepCounter() {
+      const el = document.getElementById('step-counter')
+      if (el) el.textContent = `${t('step.prefix')} ${currentStep}/4`
+    }
+
+    // ─── Pricing Engine ──────────────────────────────────────────────────────
+    // Base: 60 RON/hr | +30 RON/hr per additional pet | 350 RON/day if >= 7h
+    // Discount: 15% off when total days > 5
+    function calculateEstimate({ petTypes, quantities, checkIn, checkOut, startHour, endHour }) {
+      const dailyHours = Math.max(1, endHour - startHour)
+      const totalPets  = petTypes.reduce((sum, type) => sum + (quantities[type] || 0), 0)
+
+      // Day rate: flat 350 RON if >= 7h, otherwise 60 RON/hr — for the first pet
+      // Each additional pet adds 30 RON/hr on top
+      const baseDailyRate = dailyHours >= 7 ? 350 : 60 * dailyHours
+      const petSurcharge  = Math.max(0, totalPets - 1) * 30 * dailyHours
+      const baseDailyCost = baseDailyRate + petSurcharge
+
+      const start = new Date(checkIn  + 'T00:00:00')
+      const end   = new Date(checkOut + 'T00:00:00')
+      const days  = Math.max(1, Math.round((end - start) / 86400000))
+
+      let total = baseDailyCost * days
+      if (days > 5) total *= 0.85   // 15% loyalty discount
+
+      return {
+        low:  Math.round((total * 0.95) / 5) * 5,
+        high: Math.round((total * 1.05) / 5) * 5,
+      }
+    }
+
+    // ─── Form Wizard ─────────────────────────────────────────────────────────
+    const state = {
+      petTypes:     new Set(),
+      quantities:   { dog: 1, cat: 1, other: 1 },
+      otherPetName: '',
+      serviceType:  null,
+      checkIn:      null,
+      checkOut:     null,
+      startHour:    9,
+      endHour:      17,
+      priceLow:     null,
+      priceHigh:    null,
+    }
+
+    function showStep(n) {
+      currentStep = n
+      const track = document.getElementById('slide-track')
+      if (track) track.style.transform = `translateX(-${(n - 1) * 100}%)`
+      document.getElementById('form-progress').style.width = `${n * 25}%`
+      updateStepCounter()
+    }
+
+    function updateEstimate() {
+      if (!state.checkIn || !state.checkOut) return
+      const { low, high } = calculateEstimate({
+        petTypes:   [...state.petTypes],
+        quantities: state.quantities,
+        checkIn:    state.checkIn,
+        checkOut:   state.checkOut,
+        startHour:  state.startHour,
+        endHour:    state.endHour,
+      })
+      state.priceLow  = low
+      state.priceHigh = high
+      document.getElementById('price-estimate').classList.remove('hidden')
+      document.getElementById('estimate-range').textContent = `${low} RON — ${high} RON`
+    }
+
+    function buildHourSelect(id, defaultHour) {
+      const select = document.getElementById(id)
+      for (let h = 7; h <= 22; h++) {
+        const opt = document.createElement('option')
+        opt.value = h
+        opt.textContent = `${String(h).padStart(2, '0')}:00`
+        if (h === defaultHour) opt.selected = true
+        select.appendChild(opt)
+      }
+    }
+
+    function initForm() {
+      buildHourSelect('start-hour', state.startHour)
+      buildHourSelect('end-hour',   state.endHour)
+
+      // Step 1 — Pet rows
+      document.querySelectorAll('.pet-row').forEach(row => {
+        row.addEventListener('click', e => {
+          if (e.target.closest('.qty-btn')) return
+          const type     = row.dataset.pet
+          const selected = state.petTypes.has(type)
+          if (selected) {
+            state.petTypes.delete(type)
+            row.classList.remove('ring-2', 'ring-forest', 'border-forest')
+            row.setAttribute('aria-pressed', 'false')
+          } else {
+            state.petTypes.add(type)
+            row.classList.add('ring-2', 'ring-forest', 'border-forest')
+            row.setAttribute('aria-pressed', 'true')
+          }
+          if (type === 'other') {
+            document.getElementById('other-pet-field')
+              .classList.toggle('hidden', !state.petTypes.has('other'))
+          }
+        })
+        row.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); row.click() }
+        })
+      })
+
+      document.querySelectorAll('.qty-btn').forEach(btn => {
+        btn.addEventListener('click', e => {
+          e.stopPropagation()
+          const pet   = btn.dataset.pet
+          const delta = btn.dataset.action === 'inc' ? 1 : -1
+          state.quantities[pet] = Math.max(1, state.quantities[pet] + delta)
+          document.getElementById(`qty-${pet}`).textContent = state.quantities[pet]
+        })
+      })
+
+      document.getElementById('other-pet-name').addEventListener('input', e => {
+        state.otherPetName = e.target.value
+      })
+
+      document.getElementById('step1-next').addEventListener('click', () => {
+        if (state.petTypes.size === 0) return
+        showStep(2)
+      })
+
+      // Step 2 — Service cards
+      document.querySelectorAll('.service-card').forEach(card => {
+        card.addEventListener('click', () => {
+          document.querySelectorAll('.service-card').forEach(c => {
+            c.classList.remove('ring-2', 'ring-forest', 'border-forest')
+            c.setAttribute('aria-pressed', 'false')
+          })
+          card.classList.add('ring-2', 'ring-forest', 'border-forest')
+          card.setAttribute('aria-pressed', 'true')
+          state.serviceType = card.dataset.service
+        })
+      })
+
+      document.getElementById('step2-next').addEventListener('click', () => {
+        if (!state.serviceType) return
+        showStep(3)
+      })
+      document.getElementById('step2-back').addEventListener('click', () => showStep(1))
+
+      // Step 3 — Schedule
+      document.getElementById('check-in').addEventListener('change', e => {
+        state.checkIn = e.target.value || null
+        updateEstimate()
+      })
+      document.getElementById('check-out').addEventListener('change', e => {
+        state.checkOut = e.target.value || null
+        updateEstimate()
+      })
+      document.getElementById('start-hour').addEventListener('change', e => {
+        state.startHour = parseInt(e.target.value, 10)
+        updateEstimate()
+      })
+      document.getElementById('end-hour').addEventListener('change', e => {
+        state.endHour = parseInt(e.target.value, 10)
+        updateEstimate()
+      })
+
+      document.getElementById('step3-next').addEventListener('click', () => {
+        if (!state.checkIn || !state.checkOut) return
+        showStep(4)
+      })
+      document.getElementById('step3-back').addEventListener('click', () => showStep(2))
+
+      // Step 4 — Contact + Submit
+      document.getElementById('step4-back').addEventListener('click', () => showStep(3))
+
+      document.getElementById('confirm-booking').addEventListener('click', () => {
+        const name  = document.getElementById('contact-name').value.trim()
+        const phone = document.getElementById('contact-whatsapp').value.trim()
+        if (!name || !phone) return
+
+        // Build pet description
+        const SERVICE_LABELS = {
+          'in-home':   { en: 'In-Home Sitting',  ro: 'Îngrijire la Domiciliu' },
+          'walking':   { en: 'Park Walking',      ro: 'Plimbare în Parc' },
+          'overnight': { en: 'Overnight Stay',    ro: 'Cazare peste Noapte' },
+        }
+        const PET_LABELS = {
+          dog:   { en: 'Dog',        ro: 'Câine' },
+          cat:   { en: 'Cat',        ro: 'Pisică' },
+          other: { en: 'other pet',  ro: 'alt animal' },
+        }
+
+        const lang        = currentLang
+        const serviceName = (SERVICE_LABELS[state.serviceType] || {})[lang] || state.serviceType
+
+        const petsLabel = [...state.petTypes].map(type => {
+          const qty   = state.quantities[type]
+          const label = type === 'other' && state.otherPetName
+            ? state.otherPetName
+            : ((PET_LABELS[type] || {})[lang] || type)
+          return `${qty} ${label}`
+        }).join(', ')
+
+        const priceText = state.priceLow != null
+          ? `${state.priceLow} RON — ${state.priceHigh} RON`
+          : 'TBD'
+
+        const h = n => String(n).padStart(2, '0')
+        const dateInfo = state.checkIn && state.checkOut
+          ? `${state.checkIn} → ${state.checkOut}, ${h(state.startHour)}:00 - ${h(state.endHour)}:00`
+          : 'dates TBD'
+
+        const message = lang === 'ro'
+          ? `Bună! Sunt ${name}. Doresc ${serviceName} pentru ${petsLabel} în Sector 4.\nDate: ${dateInfo}\nEstimare: ${priceText}. Putem confirma?`
+          : `Hi! I'm ${name}. I'd like ${serviceName} for ${petsLabel} in Sector 4.\nDates: ${dateInfo}\nEstimate: ${priceText}. Can we confirm?`
+
+        window.open(`https://wa.me/40772159680?text=${encodeURIComponent(message)}`, '_blank')
+      })
+    }
+
+    // ─── Scroll Reveal ───────────────────────────────────────────────────────
+    function initScrollReveal() {
+      const observer = new IntersectionObserver(
+        entries => entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible')
+            observer.unobserve(entry.target)
+          }
+        }),
+        { threshold: 0.12 }
+      )
+      document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el))
+    }
+
+    // ─── Nav Blur on Scroll ──────────────────────────────────────────────────
+    function initNavBlur() {
+      const nav = document.getElementById('main-nav')
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 60) {
+          nav.classList.add('bg-cream/90', 'backdrop-blur-md', 'shadow-sm')
+        } else {
+          nav.classList.remove('bg-cream/90', 'backdrop-blur-md', 'shadow-sm')
+        }
+      }, { passive: true })
+    }
+
+    // ─── Legal Modals ────────────────────────────────────────────────────────
+    function initModals() {
+      // Open modal when a [data-modal] button is clicked
+      document.querySelectorAll('[data-modal]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const overlay = document.getElementById('modal-' + btn.dataset.modal)
+          if (!overlay) return
+          overlay.classList.add('is-open')
+          overlay.scrollTop = 0
+          document.body.style.overflow = 'hidden'
+        })
+      })
+
+      // Close on overlay background click or close button
+      document.querySelectorAll('.modal-overlay').forEach(overlay => {
+        overlay.addEventListener('click', e => {
+          if (e.target === overlay || e.target.closest('.modal-close')) {
+            overlay.classList.remove('is-open')
+            document.body.style.overflow = ''
+          }
+        })
+      })
+
+      // Close on Escape key
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+          document.querySelectorAll('.modal-overlay.is-open').forEach(m => {
+            m.classList.remove('is-open')
+          })
+          document.body.style.overflow = ''
+        }
+      })
+    }
+
+    // ─── Boot ────────────────────────────────────────────────────────────────
+    document.addEventListener('DOMContentLoaded', () => {
+      setLanguage(currentLang)
+
+      document.getElementById('lang-toggle').addEventListener('click', () => {
+        setLanguage(currentLang === 'en' ? 'ro' : 'en')
+      })
+
+      document.getElementById('hero-cta').addEventListener('click', () => {
+        document.getElementById('booking-form').scrollIntoView({ behavior: 'smooth' })
+      })
+
+      initScrollReveal()
+      initNavBlur()
+      initForm()
+      initModals()
+    })
+  </script>
+
+</body>
+</html>
