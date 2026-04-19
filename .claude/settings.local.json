@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(rm -rf \"/Users/eduardmoreno/test pet/dist\" \"/Users/eduardmoreno/test pet/src\" \"/Users/eduardmoreno/test pet/node_modules\" \"/Users/eduardmoreno/test pet/tests\" \"/Users/eduardmoreno/test pet/docs\")",
+      "Bash(rm -f \"/Users/eduardmoreno/test pet/package.json\" \"/Users/eduardmoreno/test pet/package-lock.json\" \"/Users/eduardmoreno/test pet/postcss.config.js\" \"/Users/eduardmoreno/test pet/tailwind.config.js\" \"/Users/eduardmoreno/test pet/vite.config.js\" \"/Users/eduardmoreno/test pet/.env\" \"/Users/eduardmoreno/test pet/.env.example\" \"/Users/eduardmoreno/test pet/.gitignore\" \"/Users/eduardmoreno/test pet/supabase_schema.sql\")"
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+# Follow My Leash
+
+> Premium professional pet-sitting service in Sector 4, Bucharest, Romania.
+
+Follow My Leash provides trusted, insured pet-sitting for dog and cat owners in Sector 4, Bucharest. Services are bookable in English and Romanian via a 4-step form with WhatsApp confirmation.
+
+## Services
+
+- **In-Home Pet Sitting**: A sitter visits the client's home in Sector 4. From 60 RON/hour.
+- **Park Walking**: Daily dog walks in Sector 4 parks and green spaces. From 60 RON/hour.
+- **Overnight Stay**: Round-the-clock care at the client's home while they travel. From 350 RON/night (7+ hours). 15% discount for bookings over 5 days.
+
+## Pricing
+
+Base rate: 60 RON/hour per pet. Additional pets: +30 RON/hour each. Overnight flat rate: 350 RON for 7+ hours per day. Weekend and public holiday surcharges apply and are agreed in advance.
+
+## Location
+
+Sector 4, Bucharest, Romania. Neighbourhoods served include Tineretului, Berceni, and Brâncuși.
+
+## Contact
+
+- WhatsApp: +40 772 159 680
+- Email: emg.digitalmedia@gmail.com
+- Website: https://follow-my-leash.vercel.app
+
+## Booking Process
+
+1. Select pet type and quantity
+2. Choose a service (in-home, walking, overnight)
+3. Pick check-in/check-out dates and hours
+4. Enter name and WhatsApp number — booking request is sent via WhatsApp for confirmation
+
+## Languages
+
+English and Romanian (toggled via language button on site).
+
+## Legal & Compliance
+
+- GDPR compliant (Regulation EU 2016/679)
+- Romanian Law 506/2004 (privacy in electronic communications)
+- OUG 34/2014 (distance contracts / consumer rights)
+- Supervised by ANSPDCP (Romanian Data Protection Authority)
+- Consumer disputes: ANPC (www.anpc.ro) and EU ODR platform
+- Third-party liability insurance held
+
+## Reviews
+
+Rated 5 stars by multiple pet owners in Sector 4, Bucharest.
