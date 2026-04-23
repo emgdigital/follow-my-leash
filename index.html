@@ -141,6 +141,16 @@
     .modal-divider { border: none; border-top: 1px solid rgba(26,26,26,0.1); margin: 2rem 0; }
     .modal-effective { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(26,26,26,0.35); margin-bottom: 2rem; }
 
+    /* Make native calendar/time picker icons visible on mobile */
+    input[type="date"]::-webkit-calendar-picker-indicator,
+    input[type="time"]::-webkit-calendar-picker-indicator {
+      opacity: 1;
+      cursor: pointer;
+      padding: 4px;
+      min-width: 20px;
+      min-height: 20px;
+    }
+
     /* Force generation of dynamic classes used by JS */
     .safelist-anchor {
       display: none !important;
@@ -568,11 +578,11 @@
               <div class="grid grid-cols-2 gap-4 mb-6">
                 <div class="flex flex-col gap-2">
                   <label for="check-in" class="text-xs font-semibold uppercase tracking-wider text-charcoal/50" data-i18n="form.step3.checkin">Check-in</label>
-                  <input id="check-in" type="date" class="border border-charcoal/20 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-forest transition-colors" />
+                  <input id="check-in" type="date" class="w-full border border-charcoal/20 px-3 py-3 rounded-xl text-sm focus:outline-none focus:border-forest transition-colors" />
                 </div>
                 <div class="flex flex-col gap-2">
                   <label for="check-out" class="text-xs font-semibold uppercase tracking-wider text-charcoal/50" data-i18n="form.step3.checkout">Check-out</label>
-                  <input id="check-out" type="date" class="border border-charcoal/20 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-forest transition-colors" />
+                  <input id="check-out" type="date" class="w-full border border-charcoal/20 px-3 py-3 rounded-xl text-sm focus:outline-none focus:border-forest transition-colors" />
                 </div>
                 <div class="flex flex-col gap-2">
                   <label for="start-hour" class="text-xs font-semibold uppercase tracking-wider text-charcoal/50" data-i18n="form.step3.start_hour">Start hour</label>
@@ -742,7 +752,7 @@
         <blockquote class="bg-white rounded-2xl shadow-md p-6 flex flex-col gap-4 flex-shrink-0 w-72 snap-start">
           <div class="flex items-center gap-3">
             <!-- AVATAR 4: replace src with your real photo -->
-            <img src="public/alinaweb.png" alt="Alina.V" width="48" height="48"
+            <img src="public/neroweb.png" alt="Alina.V" width="48" height="48"
                  class="w-12 h-12 rounded-full object-cover ring-2 ring-forest/20" loading="lazy">
             <div>
               <cite class="not-italic font-semibold text-sm text-charcoal uppercase tracking-widest">Alina.V</cite>
@@ -1423,7 +1433,7 @@
 
       // Today filtering: if check-in is today, filter past start times
       const now       = new Date()
-      const todayStr  = now.toISOString().split('T')[0]
+      const todayStr  = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`
       const checkInEl = document.getElementById('check-in')
       const isToday   = checkInEl && checkInEl.value === todayStr
       const nowMins   = isToday ? (now.getHours() * 60 + now.getMinutes()) : -1
@@ -1474,8 +1484,9 @@
     }
 
     function initForm() {
-      // Set today as minimum for date inputs
-      const todayStr = new Date().toISOString().split('T')[0]
+      // Set today as minimum for date inputs (local date, not UTC)
+      const _now = new Date()
+      const todayStr = `${_now.getFullYear()}-${String(_now.getMonth()+1).padStart(2,'0')}-${String(_now.getDate()).padStart(2,'0')}`
       document.getElementById('check-in').min  = todayStr
       document.getElementById('check-out').min = todayStr
 
@@ -1571,6 +1582,16 @@
 
       document.getElementById('step3-next').addEventListener('click', () => {
         if (!state.checkIn || !state.checkOut) return
+        const _n = new Date()
+        const _today = `${_n.getFullYear()}-${String(_n.getMonth()+1).padStart(2,'0')}-${String(_n.getDate()).padStart(2,'0')}`
+        if (state.checkIn < _today || state.checkOut < _today) {
+          const inEl  = document.getElementById('check-in')
+          const outEl = document.getElementById('check-out')
+          if (state.checkIn  < _today) inEl.style.borderColor  = '#e53e3e'
+          if (state.checkOut < _today) outEl.style.borderColor = '#e53e3e'
+          setTimeout(() => { inEl.style.borderColor = ''; outEl.style.borderColor = '' }, 2500)
+          return
+        }
         showStep(4)
       })
       document.getElementById('step3-back').addEventListener('click', () => showStep(2))
@@ -1704,6 +1725,7 @@
       { src: 'public/tomiweb.png', alt: 'Paw friend', name: 'Tomi' },
       { src: 'public/sisiweb.png', alt: 'Paw friend', name: 'Sisi' },
       { src: 'public/novaweb.png', alt: 'Paw friend', name: 'Nova' },
+      { src: 'public/neroweb.png', alt: 'Paw friend', name: 'Nero' }
     ]
 
     function initPawFriendsCarousel() {
@@ -1762,24 +1784,39 @@
       track.addEventListener('mouseleave', () => { paused = false })
 
       // Touch drag — move the carousel and resume auto-scroll after release
-      let dragStartX = 0
-      let dragging   = false
+      let dragStartX  = 0
+      let dragStartY  = 0
+      let dragging    = false
+      let isHorizDrag = null  // null = undecided, true = horizontal, false = vertical
 
       track.addEventListener('touchstart', (e) => {
-        paused     = true
-        dragging   = true
-        dragStartX = e.touches[0].clientX
+        paused      = true
+        dragging    = true
+        isHorizDrag = null
+        dragStartX  = e.touches[0].clientX
+        dragStartY  = e.touches[0].clientY
       }, { passive: true })
 
       track.addEventListener('touchmove', (e) => {
         if (!dragging) return
-        const dx   = dragStartX - e.touches[0].clientX
-        dragStartX = e.touches[0].clientX
+        const currentX = e.touches[0].clientX
+        const currentY = e.touches[0].clientY
+        // Determine swipe direction on first significant movement
+        if (isHorizDrag === null) {
+          const absDX = Math.abs(currentX - dragStartX)
+          const absDY = Math.abs(currentY - dragStartY)
+          if (absDX > 4 || absDY > 4) isHorizDrag = absDX >= absDY
+          return
+        }
+        if (!isHorizDrag) return  // vertical swipe — let page scroll
+        e.preventDefault()        // horizontal swipe — take over
+        const dx   = dragStartX - currentX
+        dragStartX = currentX
         pos += dx
         if (pos < 0)       pos += loopAt
         if (pos >= loopAt) pos -= loopAt
         track.style.transform = `translateX(-${pos}px)`
-      }, { passive: true })
+      }, { passive: false })
 
       track.addEventListener('touchend', () => {
         dragging = false
