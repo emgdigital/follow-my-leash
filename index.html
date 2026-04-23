@@ -146,9 +146,9 @@
     input[type="time"]::-webkit-calendar-picker-indicator {
       opacity: 1;
       cursor: pointer;
-      padding: 4px;
-      min-width: 20px;
-      min-height: 20px;
+      width: 22px;
+      height: 22px;
+      filter: brightness(0.4);
     }
 
     /* Force generation of dynamic classes used by JS */
@@ -703,8 +703,8 @@
 
       <!-- Scrollable track -->
       <div id="reviews-track"
-           class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 px-8"
-           style="-webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;">
+           class="flex gap-6 overflow-x-auto snap-x pb-4 px-8"
+           style="-webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none; touch-action: pan-x;">
 
         <!-- Review card 1 -->
         <blockquote class="bg-white rounded-2xl shadow-md p-6 flex flex-col gap-4 flex-shrink-0 w-72 snap-start">
